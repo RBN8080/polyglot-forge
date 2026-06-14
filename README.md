@@ -1,9 +1,7 @@
-# 🔨 polyglot-forge
-
-> Un esqueleto de **microservicios políglotas** listo para forjar tus próximas apps.
+> Esqueleto de **microservicios políglotas** listo para forjar tus próximas apps.
 > Ocho lenguajes hablando por red (HTTP/JSON), cada uno en lo que mejor hace.
 
-`polyglot-forge` es una **plantilla / campo de entrenamiento**: una arquitectura de
+una **plantilla / campo de entrenamiento**: una arquitectura de
 microservicios completa y funcionando de punta a punta, pensada para **aprender**
 (redes, concurrencia, cada lenguaje) y para **arrancar proyectos reales** sin
 montar todo desde cero.
@@ -17,27 +15,27 @@ Maven. Compila y arranca sin internet.
 
 ---
 
-## 🧠 ¿Para qué te sirve este esqueleto? (ideas de apps)
+## ¿Para qué te sirve este esqueleto? (ideas de apps)
 
 El patrón es siempre el mismo: **navegador → BFF → gateway → N servicios → agrega**.
 Solo cambias *qué* calcula cada servicio:
 
 | Si quieres construir… | Reutilizas… | Cambias… |
 |------------------------|-------------|----------|
-| 🖼️ **Procesador de imágenes** (miniaturas, EXIF, filtros) | Todo el esqueleto | Servicios → generan miniaturas, leen metadatos |
-| 🔐 **Analizador de seguridad de archivos** (hashes, firmas, malware-ish) | Gateway + fan-out | Rust/C → hashes; Python → reglas YARA-like |
-| 📊 **Dashboard de datos** (sube CSV, te da estadísticas/gráficas) | BFF + frontend + Java Core | Python → pandas-style; Java → almacena datasets |
-| 🌐 **Acortador de URLs con analítica** | Gateway + Core + frontend | Rust → IDs cortos; Python → clics/stats |
-| 🧪 **Banco de benchmarks** (compara lenguajes en una tarea) | Todo + las latencias que ya mide el gateway | Cada servicio → misma tarea, comparas `ms` |
-| 🤖 **Orquestador de IA** (cada servicio llama a un modelo distinto) | Gateway fan-out | Servicios → wrappers de APIs de modelos |
-| 📦 **Pipeline ETL** (extrae → transforma → carga) | Gateway en cadena en vez de paralelo | Encadenas servicios en secuencia |
+| **Procesador de imágenes** (miniaturas, EXIF, filtros) | Todo el esqueleto | Servicios → generan miniaturas, leen metadatos |
+| **Analizador de seguridad de archivos** (hashes, firmas, malware-ish) | Gateway + fan-out | Rust/C → hashes; Python → reglas YARA-like |
+| **Dashboard de datos** (sube CSV, te da estadísticas/gráficas) | BFF + frontend + Java Core | Python → pandas-style; Java → almacena datasets |
+| **Acortador de URLs con analítica** | Gateway + Core + frontend | Rust → IDs cortos; Python → clics/stats |
+| **Banco de benchmarks** (compara lenguajes en una tarea) | Todo + las latencias que ya mide el gateway | Cada servicio → misma tarea, comparas `ms` |
+| **Orquestador de IA** (cada servicio llama a un modelo distinto) | Gateway fan-out | Servicios → wrappers de APIs de modelos |
+| **Pipeline ETL** (extrae → transforma → carga) | Gateway en cadena en vez de paralelo | Encadenas servicios en secuencia |
 
 > El gateway ya mide la **latencia de cada servicio**, así que cualquier cosa que
 > construyas viene con métricas de rendimiento gratis.
 
 ---
 
-## 🏗️ Arquitectura
+## Arquitectura
 
 ```
    Navegador
@@ -77,7 +75,7 @@ cuerpo crudo de la petición (sencillo de leer incluso en C).
 
 ---
 
-## 🚀 Cómo correrlo
+## Cómo correrlo
 
 **Requisitos** (toolchains instaladas): Node.js, Python 3, JDK, Go, Rust (`rustc`),
 GCC, G++, TypeScript (`tsc`).
@@ -111,7 +109,7 @@ curl http://127.0.0.1:8000/history
 
 ---
 
-## 📂 Estructura
+## Estructura
 
 ```
 polyglot-forge/
@@ -130,7 +128,7 @@ polyglot-forge/
 
 ---
 
-## 🛠️ Cómo extenderlo (añadir tu propio servicio)
+## Cómo extenderlo (añadir tu propio servicio)
 
 1. Crea una carpeta en `services/mi-servicio/` con un servidor HTTP que exponga
    `GET /health` y `POST /` (recibe bytes, responde JSON).
@@ -144,7 +142,7 @@ servicio reciba cada archivo y aparezca en el informe.
 
 ---
 
-## 🗺️ Ideas para seguir (roadmap de estudio)
+## Ideas para seguir (roadmap de estudio)
 
 - **Persistencia real** en Java Core (SQLite/JDBC) en vez de memoria.
 - **Tolerancia a fallos**: reintentos y *timeouts* por servicio en el gateway.
@@ -154,6 +152,6 @@ servicio reciba cada archivo y aparezca en el informe.
 
 ---
 
-## 📝 Licencia
+## Licencia
 
 MIT — úsalo, modifícalo y forja lo que quieras.
