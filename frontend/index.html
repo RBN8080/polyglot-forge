@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Polyglot Pipeline · Procesador de archivos</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>🧩 Polyglot Pipeline</h1>
+      <p class="subtitle">
+        Un archivo, ocho lenguajes. Sube algo y mira cómo cada microservicio
+        lo analiza desde su ángulo.
+      </p>
+      <span id="health" class="health">Comprobando…</span>
+    </header>
+
+    <main>
+      <section id="drop" class="dropzone">
+        <p>Arrastra un archivo aquí</p>
+        <p class="or">o</p>
+        <label class="btn">
+          Elegir archivo
+          <input type="file" id="file" hidden />
+        </label>
+      </section>
+
+      <section id="results" class="results">
+        <p class="muted">Esperando un archivo para procesar…</p>
+      </section>
+
+      <section class="panel">
+        <h3>📒 Historial (Java Core)</h3>
+        <ul id="history"></ul>
+      </section>
+    </main>
+
+    <footer>
+      <p>
+        Frontend (TS→JS) → BFF (Node) → Gateway (Go) → Rust · C · C++ · Python ·
+        Java. Comunicación HTTP/JSON.
+      </p>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>

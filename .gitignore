@@ -1,0 +1,11 @@
+# Binarios compilados
+*.exe
+*.class
+*.o
+*.obj
+
+# Frontend generado desde TypeScript
+frontend/app.js
+
+# Varios
+*.log

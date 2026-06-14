@@ -1,0 +1,9 @@
+# Normaliza los finales de línea: texto con LF en el repo, nativo al hacer checkout.
+* text=auto eol=lf
+
+# Scripts de Windows en CRLF.
+*.ps1 text eol=crlf
+
+# Binarios: nunca tocar.
+*.exe binary
+*.class binary
